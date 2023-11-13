@@ -1,85 +1,73 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+  import SignUp from "./components/SignUp.vue"
+  export default{
+    name: 'App',
+    components:{
+      SignUp,
+    }
+  }
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+   <div class="container">
+    <img class="logo" src="./assets/logo.jpg" alt="">
+    <h1 class="text">Sign Up</h1>
+    <div class="register">
+      <input type="text" placeholder="Enter name" />
+      <input type="text" placeholder="Enter Email" />
+      <input type="text" placeholder="Enter Password" />
+      <button class="button">Sign Up</button>
     </div>
-  </header>
+   </div>
 
-  <RouterView />
+  
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
+<style>
+ 
+ .logo{
+    width: 100px;
+    position: relative;
+    left: 400px;
+   
+   
+    
+   
+ }
+ .register input{
+   width: 300px;
+   height: 40px;
+   padding-left: 20px;
+   display: block;
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+   margin-bottom: 10px;
+   margin-right: auto;
+   margin-left: auto;
+   border: 1px solid brown;
+ 
+ }
+ .text{
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-size: medium;
+   color: rgb(163, 76, 76);
+   position: relative;
+   left: 425px;
+   bottom: 10px;
+ }
+ .register button{
+  position: relative;
+  left: 307px;
+  font-size: smaller;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  width: 302px;
+  height: 40px;
+  background: rgb(163, 76, 76) ;
+ }
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
+ 
 </style>
